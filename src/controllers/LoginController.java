@@ -127,6 +127,8 @@ public class LoginController implements Initializable {
                     status = "Error";
                 } else {
                     setLblError(Color.GREEN, "Login Successful..Redirecting..");
+//                    HomeController home=new HomeController();
+//					home.setUserInformation(email);
                 }
             } catch (SQLException ex) {
                 System.err.println(ex.getMessage());

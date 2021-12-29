@@ -7,12 +7,12 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="450.0" prefWidth="463.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17">
+<AnchorPane prefHeight="450.0" prefWidth="463.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="controllers.HomeController">
    <children>
-      <Button layoutX="393.0" layoutY="125.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" text="Parking" textFill="#d30f0f" />
-      <Button layoutX="393.0" layoutY="175.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" text="Bike" textFill="#c30b0b" />
-      <Button layoutX="395.0" layoutY="283.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" text="Logout" textFill="#cd1111" />
-      <Button layoutX="396.0" layoutY="227.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" text="Pay" textFill="#f20404" />
+      <Button fx:id="Parking" layoutX="393.0" layoutY="125.0" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefHeight="31.0" prefWidth="67.0" text="Parking" textFill="#d30f0f" />
+      <Button fx:id="Bike" layoutX="393.0" layoutY="175.0" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefHeight="31.0" prefWidth="67.0" text="Bike" textFill="#c30b0b" />
+      <Button fx:id="Logout" layoutX="395.0" layoutY="283.0" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefHeight="31.0" prefWidth="67.0" text="Logout" textFill="#cd1111" />
+      <Button fx:id="Pay" layoutX="396.0" layoutY="227.0" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefHeight="31.0" prefWidth="67.0" text="Pay" textFill="#f20404" />
       <Label layoutX="113.0" layoutY="26.0" text="Ecopark" textFill="#10dd09">
          <font>
             <Font name="Arial Bold" size="60.0" />

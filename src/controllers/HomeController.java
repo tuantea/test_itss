@@ -2,7 +2,8 @@ package controllers;
 
 	import java.sql.Connection;
 	import java.sql.PreparedStatement;
-	import java.net.URL;
+import java.io.IOException;
+import java.net.URL;
 	import java.sql.ResultSet;
 	import java.sql.SQLException;
 	import java.util.ResourceBundle;
@@ -11,8 +12,11 @@ package controllers;
 	import javafx.collections.FXCollections;
 	import javafx.collections.ObservableList;
 	import javafx.fxml.FXML;
-	import javafx.fxml.Initializable;
-	import javafx.scene.control.Button;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 	import javafx.scene.control.ComboBox;
 	import javafx.scene.control.DatePicker;
 	import javafx.scene.control.Label;
@@ -22,7 +26,8 @@ package controllers;
 	import javafx.scene.control.TextField;
 	import javafx.scene.input.MouseEvent;
 	import javafx.scene.paint.Color;
-	import javafx.util.Callback;
+import javafx.stage.Stage;
+import javafx.util.Callback;
 	import utils.ConnectionUtil;
 
 	/**
@@ -35,24 +40,14 @@ package controllers;
 	    @FXML
 	    private Label welcome;
 	    @FXML
-	    private TextField txtLastname;
+	    private Button Parking;
 	    @FXML
-	    private TextField txtEmail;
+	    private Button Bike;
 	    @FXML
-	    private DatePicker txtDOB;
+	    private Button Logout;
 	    @FXML
-	    private Button btnSave;
-	    @FXML
-	    private ComboBox<String> txtGender;
-	    @FXML
-	    Label lblStatus;
+	    private Button Pay;
 
-	    @FXML
-	    TableView tblData;
-
-	    /**
-	     * Initializes the controller class.
-	     */
 	    PreparedStatement preparedStatement;
 	    Connection connection;
 
@@ -62,26 +57,49 @@ package controllers;
 
 	    @Override
 	    public void initialize(URL url, ResourceBundle rb) {
-	        // TODO
-	        txtGender.getItems().addAll("Male", "Female", "Other");
-	        txtGender.getSelectionModel().select("Male");
-	        fetColumnList();
-	        fetRowList();
+	      
+	    }
+	    public void setUserInformation(String username) {
+	    	welcome.setText("Welcome"+username+"!");
+	    } 
+	
+
+	    @FXML
+	    private void HandleEvents(MouseEvent event) {
+	       if(event.getSource() == Parking)
+	       { try {
+
+               //add you loading or delays - ;-)
+               Node node = (Node) event.getSource();
+               Stage stage = (Stage) node.getScene().getWindow();
+               //stage.setMaximized(true);
+               stage.close();
+               Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/fxml/Parking.fxml")));
+               stage.setScene(scene);
+               stage.show();
+
+           } catch (IOException ex) {
+               System.err.println(ex.getMessage());
+           }}
+	       else if(event.getSource() == Bike) { try {
+
+               //add you loading or delays - ;-)
+               Node node = (Node) event.getSource();
+               Stage stage = (Stage) node.getScene().getWindow();
+               //stage.setMaximized(true);
+               stage.close();
+               Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/fxml/Bike.fxml")));
+               stage.setScene(scene);
+               stage.show();
+
+           } catch (IOException ex) {
+               System.err.println(ex.getMessage());
+           }}
+	       else if(event.getSource() == Pay) {}
+	       else if(event.getSource()==Logout) {}
 
 	    }
-
-//	    @FXML
-//	    private void HandleEvents(MouseEvent event) {
-//	        //check if not empty
-//	        if (txtEmail.getText().isEmpty() || txtFirstname.getText().isEmpty() || txtLastname.getText().isEmpty() || txtDOB.getValue().equals(null)) {
-//	            lblStatus.setTextFill(Color.TOMATO);
-//	            lblStatus.setText("Enter all details");
-//	        } else {
-//	            saveData();
-//	        }
-//
-//	    }
-
+	    }
 //	    private void clearFields() {
 //	        txtFirstname.clear();
 //	        txtLastname.clear();
