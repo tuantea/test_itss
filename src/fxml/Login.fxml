@@ -39,7 +39,7 @@
                     </font>
                 </Label>
                
-                <Button fx:id="btnSignup" layoutX="4.0" layoutY="200.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="275.0"  text="Sign up" />
+                <Button fx:id="btnSignup" layoutX="4.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="34.0" prefWidth="275.0"  text="Sign up" />
                 
                 <Label fx:id="lblErrors" alignment="CENTER" layoutX="8.0" layoutY="95.0" prefHeight="23.0" prefWidth="275.0" textFill="#ff6354">
                     <font>

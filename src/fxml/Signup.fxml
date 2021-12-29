@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="431.0" prefWidth="496.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="controllers.SignupController">
+   <children>
+      <Button fx:id="Signup" layoutX="151.0" layoutY="216.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction"  prefHeight="40.0" prefWidth="170.0" text="SignUp" textFill="#eb0404" textOverrun="WORD_ELLIPSIS" />
+      <TextField fx:id="txtUsername" layoutX="127.0" layoutY="88.0" prefHeight="26.0" prefWidth="218.0" promptText="name" />
+      <TextField fx:id="txtPassword" layoutX="127.0" layoutY="151.0" prefHeight="26.0" prefWidth="218.0" promptText="password" />
+       <Label fx:id="lblErrors" alignment="CENTER" layoutX="127.0" layoutY="200.0" prefHeight="23.0" prefWidth="275.0" textFill="#ff6354">
+                    <font>
+                        <Font name="Segoe UI" size="10.0" />
+                    </font>
+                </Label>
+   </children>
+</AnchorPane>

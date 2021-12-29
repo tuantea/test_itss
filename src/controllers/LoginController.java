@@ -37,6 +37,8 @@ public class LoginController implements Initializable {
 
     @FXML
     private Button btnSignin;
+    @FXML 
+    private Button btnSignup;
 
     /// -- 
     Connection con = null;
@@ -66,6 +68,26 @@ public class LoginController implements Initializable {
 
             }
         }
+        if (event.getSource() == btnSignup) {
+                    
+					try {
+						Node node = (Node) event.getSource();
+	                    Stage stage = (Stage) node.getScene().getWindow();
+	                    //stage.setMaximized(true);
+	                    stage.close();
+	                    Scene scene;
+						scene = new Scene(FXMLLoader.load(getClass().getResource("/fxml/Signup.fxml")));
+						stage.setScene(scene);
+	                    stage.show();
+					
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+                    
+
+                
+
+            }
     }
 
     @Override
