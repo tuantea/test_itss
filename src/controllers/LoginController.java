@@ -94,7 +94,7 @@ public class LoginController implements Initializable {
             status = "Error";
         } else {
             //query
-            String sql = "SELECT * FROM user Where email = ? and password = ?";
+            String sql = "SELECT * FROM Users Where name = ? and password = ?";
             try {
                 preparedStatement = con.prepareStatement(sql);
                 preparedStatement.setString(1, email);

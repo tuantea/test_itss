@@ -4,15 +4,10 @@ public class User {
 
     private String id;
 
-    private String email;
+    private String name;
 
-    private String dob;
+    private String password;
 
-    private String gender;
-
-    private String lastname;
-
-    private String firstname;
 
     public String getId ()
     {
@@ -24,59 +19,30 @@ public class User {
         this.id = id;
     }
 
-    public String getEmail ()
+    public String getName ()
     {
-        return email;
+        return name;
     }
 
-    public void setEmail (String email)
+    public void setName (String name)
     {
-        this.email = email;
+        this.name = name;
+    }
+  
+
+    public String getPassword ()
+    {
+        return password;
     }
 
-    public String getDob ()
+    public void setPassword (String password)
     {
-        return dob;
-    }
-
-    public void setDob (String dob)
-    {
-        this.dob = dob;
-    }
-
-    public String getGender ()
-    {
-        return gender;
-    }
-
-    public void setGender (String gender)
-    {
-        this.gender = gender;
-    }
-
-    public String getLastname ()
-    {
-        return lastname;
-    }
-
-    public void setLastname (String lastname)
-    {
-        this.lastname = lastname;
-    }
-
-    public String getFirstname ()
-    {
-        return firstname;
-    }
-
-    public void setFirstname (String firstname)
-    {
-        this.firstname = firstname;
+        this.password = password;
     }
 
     @Override
     public String toString()
     {
-        return "ClassPojo [id = "+id+", email = "+email+", dob = "+dob+", gender = "+gender+", lastname = "+lastname+", firstname = "+firstname+"]";
+        return "ClassPojo [id = "+id+", email = "+name+", dob = "+password+"]";
     }
 }
