@@ -19,7 +19,7 @@
          </font>
       </Label>
       <ImageView fitHeight="150.0" fitWidth="325.0" layoutX="57.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true" />
-      <Label id="welcome" layoutX="36.0" layoutY="123.0" prefHeight="57.0" prefWidth="271.0" text="Welcome" textFill="#1010e3">
+      <Label fx:id="welcome" layoutX="36.0" layoutY="123.0" prefHeight="57.0" prefWidth="271.0" text="Welcome" textFill="#1010e3">
          <font>
             <Font size="30.0" />
          </font>
