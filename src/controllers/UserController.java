@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controllers;
 
 import java.sql.Connection;
@@ -33,96 +28,36 @@ import utils.ConnectionUtil;
 /**
  * FXML Controller class
  *
- * @author oXCToo
+ * @author NVT
  */
-public class ParkingController implements Initializable {
+public class UserController implements Initializable {
 
-	 @FXML
-	    private TextField id;
-	    @FXML
-	    private TextField location;
-	    @FXML
-	    private TextField Bike;
-	    @FXML
-	    private TextField EBike;
-	    @FXML
-	    private TextField TBike;   
-	    @FXML
-	    private Button btnSave;
-	    @FXML
-	    Label lblStatus;
+    private ComboBox<String> txtGender;
+    @FXML
+    Label lblStatus;
 
-	    @FXML
-	    TableView tblData;
+    @FXML
+    TableView tblData;
 
-	    /**
-	     * Initializes the controller class.
-	     */
-	    PreparedStatement preparedStatement;
-	    Connection connection;
+    /**
+     * Initializes the controller class.
+     */
+    PreparedStatement preparedStatement;
+    Connection connection;
 
-    public ParkingController() {
+    public UserController() {
         connection = (Connection) ConnectionUtil.conDB();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
         fetColumnList();
         fetRowList();
 
     }
-
-    @FXML
-    private void HandleEvents(MouseEvent event) {
-        //check if not empty
-        if (id.getText().isEmpty() || location.getText().isEmpty() || 	Bike.getText().isEmpty() || EBike.getText().isEmpty()||TBike.getText().isEmpty()) {
-            lblStatus.setTextFill(Color.TOMATO);
-            lblStatus.setText("Enter all details");
-        } else {
-            saveData();
-        }
-
-    }
-
-    private void clearFields() {
-        id.clear();
-        location.clear();
-        Bike.clear();
-        EBike.clear();
-        TBike.clear();
-        
-    }
-
-    private String saveData() {
-
-        try {
-            String st = "INSERT INTO Parking ( id, location, Bike, EBike, TBike,Biked,EBiked,TBiked) VALUES (?,?,?,?,?,0,0,0)";
-            preparedStatement = (PreparedStatement) connection.prepareStatement(st);
-            preparedStatement.setString(1, id.getText());
-            preparedStatement.setString(2, location.getText());
-            preparedStatement.setString(3, Bike.getText());
-            preparedStatement.setString(4, EBike.getText());
-            preparedStatement.setString(5, TBike.getText());
-            preparedStatement.executeUpdate();
-            lblStatus.setTextFill(Color.GREEN);
-            lblStatus.setText("Added Successfully");
-
-            fetRowList();
-            //clear fields
-            clearFields();
-            return "Success";
-
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-            lblStatus.setTextFill(Color.TOMATO);
-            lblStatus.setText(ex.getMessage());
-            return "Exception";
-        }
-    }
-
     private ObservableList<ObservableList> data;
-    String SQL = "SELECT * from Parking";
+    String SQL = "SELECT id,name from users";
 
     //only fetch columns
     private void fetColumnList() {

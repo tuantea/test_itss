@@ -95,10 +95,41 @@ import javafx.util.Callback;
            } catch (IOException ex) {
                System.err.println(ex.getMessage());
            }}
-	       else if(event.getSource() == Pay) {}
-	       else if(event.getSource()==Logout) {}
+	       else if(event.getSource() == Pay) {
+	    	   try {
 
+	               //add you loading or delays - ;-)
+	               Node node = (Node) event.getSource();
+	               Stage stage = (Stage) node.getScene().getWindow();
+	               //stage.setMaximized(true);
+	               stage.close();
+	               Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/fxml/User.fxml")));
+	               stage.setScene(scene);
+	               stage.show();
+
+	           } catch (IOException ex) {
+	               System.err.println(ex.getMessage());
+	           }
+	       }
+	       else if(event.getSource()==Logout) {
+	    	   try {
+
+	               //add you loading or delays - ;-)
+	               Node node = (Node) event.getSource();
+	               Stage stage = (Stage) node.getScene().getWindow();
+	               //stage.setMaximized(true);
+	               stage.close();
+	               Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/fxml/Login.fxml")));
+	               stage.setScene(scene);
+	               stage.show();
+
+	           } catch (IOException ex) {
+	               System.err.println(ex.getMessage());
+	           }
+
+	    
 	    }
+	       }
 	    }
 //	    private void clearFields() {
 //	        txtFirstname.clear();

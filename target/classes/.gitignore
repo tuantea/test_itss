@@ -1,3 +1,6 @@
 /application/
 /controllers/
 /fxml/
+/models/
+/module-info.class
+/utils/

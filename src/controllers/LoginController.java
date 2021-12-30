@@ -68,26 +68,6 @@ public class LoginController implements Initializable {
 
             }
         }
-        if (event.getSource() == btnSignup) {
-                    
-					try {
-						Node node = (Node) event.getSource();
-	                    Stage stage = (Stage) node.getScene().getWindow();
-	                    //stage.setMaximized(true);
-	                    stage.close();
-	                    Scene scene;
-						scene = new Scene(FXMLLoader.load(getClass().getResource("/fxml/Signup.fxml")));
-						stage.setScene(scene);
-	                    stage.show();
-					
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-                    
-
-                
-
-            }
     }
 
     @Override
@@ -116,7 +96,7 @@ public class LoginController implements Initializable {
             status = "Error";
         } else {
             //query
-            String sql = "SELECT * FROM Users Where name = ? and password = ?";
+            String sql = "SELECT * FROM Admins Where name = ? and password = ?";
             try {
                 preparedStatement = con.prepareStatement(sql);
                 preparedStatement.setString(1, email);
